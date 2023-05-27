@@ -28,7 +28,10 @@ def solve(goal, plan):
             return None
         
         # Explore subtree
-        return solve(goal, plan+[{'task':chosen_option, 'state':None}]) 
+        valid_plan =  solve(goal, plan+[{'task':chosen_option, 'state':None}])
+        if valid_plan != None:
+            return valid_plan
+        
 
 
 if __name__ == "__main__":
